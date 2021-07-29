@@ -1,1 +1,1 @@
-# Notes
+# Note navigation page
