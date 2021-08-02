@@ -14,9 +14,9 @@
 
 <br>
 
-![下载的文件](../../../Images/Linux_Install_Images/RabbitMQ_Install_Images/2021-08-02_202334.png)
+![下载的文件](https://github.com/Dashan-37/Notes/raw/master/Images/Linux_Install_Images/RabbitMQ_Install_Images/2021-08-02_202334.png)
 
-- 这里我把文件放入了`Linux`的 `/home/mytest/`目录文件夹下
+- 这里我把文件上传到`Linux`的 `/home/mytest/`目录文件夹下
 
 ```shell
 //进入mytest目录文件夹
