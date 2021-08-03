@@ -16,6 +16,8 @@
 
 ![下载的文件](https://github.com/Dashan-37/Notes/raw/master/Images/Linux_Install_Images/RabbitMQ_Install_Images/2021-08-02_202334.png)
 
+<br>
+
 - 这里我把文件上传到`Linux`的 `/home/mytest/`目录文件夹下`该步骤省略`
 - 进入`mytest`目录文件夹
 
