@@ -34,7 +34,7 @@
 - 导入`pom.xml`中的启动器依赖
 - 配置文件，`properties` 或 `yml`
   * 推荐使用`yml`
-- 引导器上添加注解
+- 引导类`启动类`上添加注解
   * `Application`
 
 <br>
@@ -56,6 +56,70 @@
 
 ### 搭建服务器端
 
+- 创建工程`New Module`→`Spring Initializr`→`Dependencies:`
+- `Dependencies`选择
+  - `Web`→`Spring Web` `√选`
+  - `Spring Cloud Discovery`→`Eureka Server` `√选`
+
+<br>
+
 - `pom.xml`中导入启动器依赖
   - 注意`SpringBood`和`SpringCloud`对应的版本
   - 不要自己随意导入，如果出现启动操作或`jar`包冲突，就是版本问题导致的无法启动
+
+`pom.xml` `测试依赖被删除`
+
+```xml
+<!--  springboot的信息  -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>cn.dashan.springcloud</groupId>
+    <artifactId>eureka-server</artifactId>
+    <version>1.0.0</version>
+
+    <name>eureka-server</name>
+    <description>eureka-server</description>
+    <properties>
+        <java.version>11</java.version>
+        <spring-cloud.version>2020.0.3</spring-cloud.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+        </dependency>
+    </dependencies>
+
+<!--  版本控制  -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+```
+
