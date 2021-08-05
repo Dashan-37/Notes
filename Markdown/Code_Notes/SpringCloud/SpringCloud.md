@@ -123,3 +123,38 @@
     </build>
 ```
 
+<br>
+
+- `yml`配置文件，一定要注意`yml`语法问题
+
+`application.yml`
+
+```yml
+# 端口号
+server:
+  port: 6001
+
+
+# Eureka的配置信息
+eureka:
+  client:
+    service-url:
+      # 注册中心的url
+      defaultZone: http://localhost:6001/eureka
+    # 无需注册到注册中心
+    register-with-eureka: false
+    # 无需拉取注册中心的服务列表
+    fetch-registry: false
+
+
+# 如何测试注册中心部署成功呢？
+# 在浏览器上访问eureka后台管理页面
+# http://localhost:6001
+```
+
+<br>
+
+- 引导类`启动类`上添加新的注解
+  - `@EnableEurekaServer` `开启注册中心的服务器端`
+
+
