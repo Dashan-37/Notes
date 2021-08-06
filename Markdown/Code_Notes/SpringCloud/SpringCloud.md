@@ -130,11 +130,6 @@
 `application.yml` `配置文件`
 
 ```yml
-# 项目名称，注册中心中注册的服务名称
-#spring:
-#  application:
-#    name: 工程名称
-
 # 端口号
 server:
   port: 6001
@@ -150,6 +145,9 @@ eureka:
     register-with-eureka: false
     # 无需拉取注册中心的服务列表
     fetch-registry: false
+  server:
+    # 服务器配置自我保护机制的关闭
+    enable-self-preservation: false
 
 
 # 如何测试注册中心部署成功呢？
@@ -205,11 +203,16 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:6001/eureka
-    # 默认值为true，可以不写
+    # 默认值为true
     # 是否拉取服务列表到本地工程中
     fetch-registry: true
     # 是否注册到eureka注册中心
     register-with-eureka: true
+  instance:
+    # 向服务器端发送心跳机制的时间，以秒为单位
+    lease-renewal-interval-in-seconds: 5
+    # 服务器端如果没有收到心跳机制，10秒后剔除服务列表，以秒为单位
+    lease-expiration-duration-in-seconds: 10
 ```
 
 `Provider7001Application.java` `引导类文件`
@@ -256,11 +259,16 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:6001/eureka
-    # 默认值为true，可以不写
+    # 默认值为true
     # 是否拉取服务列表到本地工程中
     fetch-registry: true
     # 是否注册到eureka注册中心
     register-with-eureka: true
+  instance:
+    # 向服务器端发送心跳机制的时间，以秒为单位
+    lease-renewal-interval-in-seconds: 5
+    # 服务器端如果没有收到心跳机制，10秒后剔除服务列表，以秒为单位
+    lease-expiration-duration-in-seconds: 10
 ```
 
 `Provider8001Application.java` `引导类文件`
