@@ -67,7 +67,7 @@
   - 注意`SpringBood`和`SpringCloud`对应的版本
   - 不要自己随意导入，如果出现启动操作或`jar`包冲突，就是版本问题导致的无法启动
 
-`pom.xml` `测试依赖被删除`
+`pom.xml` `依赖文件` `测试依赖被删除`
 
 ```xml
 <!--  springboot的信息  -->
@@ -127,9 +127,14 @@
 
 - `yml`配置文件，一定要注意`yml`语法问题
 
-`application.yml`
+`application.yml` `配置文件`
 
 ```yml
+# 项目名称，注册中心中注册的服务名称
+#spring:
+#  application:
+#    name: 工程名称
+
 # 端口号
 server:
   port: 6001
@@ -157,4 +162,113 @@ eureka:
 - 引导类`启动类`上添加新的注解
   - `@EnableEurekaServer` `开启注册中心的服务器端`
 
+<br>
 
+<br>
+
+### 搭建客户端
+
+##### 搭建提供者工程
+
+- 创建工程`New Module`→`Spring Initializr`→`Dependencies:`
+- `Dependencies`选择
+  - `Web`→`Spring Web` `√选`
+  - `Spring Cloud Discovery`→`Eureka Discovery Client` `√选` `客户端工程`
+
+`pom.xml` `依赖文件`
+
+```xml
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+```
+
+`application.yml` `配置文件`
+
+```yml
+# 配置端口号
+server:
+  port: 7001
+
+# 配置工程服务名称
+spring:
+  application:
+    name: eureka-client-provider
+
+# 注册到注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6001/eureka
+    # 默认值为true，可以不写
+    # 是否拉取服务列表到本地工程中
+    fetch-registry: true
+    # 是否注册到eureka注册中心
+    register-with-eureka: true
+```
+
+`Provider7001Application.java` `引导类文件`
+
+```java
+// 客户端提供者
+@EnableEurekaClient
+@SpringBootApplication
+public class Provider7001Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Provider7001Application.class, args);
+    }
+}
+```
+
+<br>
+
+##### 搭建消费者工程
+
+- 创建工程`New Module`→`Spring Initializr`→`Dependencies:`
+- `Dependencies`选择
+  - `Web`→`Spring Web` `√选`
+  - `Spring Cloud Discovery`→`Eureka Discovery Client` `√选` `客户端工程`
+
+`pom.xml` `依赖文件`
+
+- ***同提供者工程***
+
+`application.yml` `配置文件`
+
+```yml
+# 配置端口号
+server:
+  port: 8001
+
+# 配置工程服务名称
+spring:
+  application:
+    name: eureka-client-consumer
+
+# 注册到注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6001/eureka
+    # 默认值为true，可以不写
+    # 是否拉取服务列表到本地工程中
+    fetch-registry: true
+    # 是否注册到eureka注册中心
+    register-with-eureka: true
+```
+
+`Provider8001Application.java` `引导类文件`
+
+- ***同提供者工程***
+
+<br>
+
+<br>
+
+### 远程调用
