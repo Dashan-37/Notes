@@ -237,7 +237,7 @@ public class Provider7001Application {
 
 `pom.xml` `依赖文件`
 
-- ***同提供者工程***
+- *同提供者工程*
 
 `application.yml` `配置文件`
 
@@ -265,7 +265,7 @@ eureka:
 
 `Provider8001Application.java` `引导类文件`
 
-- ***同提供者工程***
+- *同提供者工程*
 
 <br>
 
