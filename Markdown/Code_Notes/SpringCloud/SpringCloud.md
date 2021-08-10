@@ -280,3 +280,19 @@ eureka:
 <br>
 
 ### 远程调用
+
+<br>
+
+* 微服务之间的可以相互访问
+  * 并不是一定按照消费者访问提供者工程
+* 消费者工程控制器
+  * 注意事项
+    1. get和post是有返回值的
+    2. put和delete是没有返回值的
+    3. 参数传递时，get方式和delete方式，通过RestFul进行传递或kv键值对拼接
+    4. 参数传递时，post方式和put方式，通过RestFul进行传递或kv键值对拼接或请求体中传递
+    5. 接收参数时
+       * RestFul参数传递，接收方式 `@PathVariable`
+       * 请求体参数传递，接收方式 `@RequestBody`
+       * 地址栏kv参数传递，接收方式 `@RequestParam`
+
