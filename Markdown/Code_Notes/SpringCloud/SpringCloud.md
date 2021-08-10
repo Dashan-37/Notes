@@ -292,7 +292,7 @@ eureka:
     3. 参数传递时，`get`方式和`delete`方式，通过`RestFul`进行传递或`kv`键值对拼接
     4. 参数传递时，`post`方式和`put`方式，通过`RestFul`进行传递或`kv`键值对拼接请求体中传递
     5. 接收参数时
-      1. `RestFul`参数传递，接收方式 `@PathVariable`
-      2. 请求体参数传递，接收方式 `@RequestBody`
-      3. 地址栏`kv`参数传递，接收方式 `@RequestParam`
+         1. `RestFul`参数传递，接收方式 `@PathVariable`
+         2. 请求体参数传递，接收方式 `@RequestBody`
+         3. 地址栏`kv`参数传递，接收方式 `@RequestParam`
 
