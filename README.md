@@ -17,7 +17,7 @@
 ```
 
 ```txt
-- 📫 联系邮箱dashan_IZ37@gmail.com
+- 📫 联系邮箱dashan_iz37@gmail.com
 ```
 
 ### [点击此处进入笔记导航](https://github.com/Dashan-IZ/Notes/tree/master/Markdown)
