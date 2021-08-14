@@ -6,4 +6,4 @@
 
 ### [Linux软件安装](https://github.com/Dashan-IZ/Notes/tree/master/Markdown/Linux_Install)
 
-### [面试题](https://github.com/Dashan-IZ/Notes/tree/master/Markdown/Interview_Notes)
+### [面试题](https://github.com/Dashan-IZ/Notes/tree/master/Markdown/Interview_Questions)
