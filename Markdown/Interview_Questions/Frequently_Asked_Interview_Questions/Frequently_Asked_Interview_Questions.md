@@ -77,18 +77,20 @@
 
 ### 六、在Java中如何跳出当前的多重嵌套循环
 
-可以在外层循环语句前定义一个标号，然后在内层循环体的代码中使用带有标号的`break`语句，即可跳出外层循环
+- 可以在外层循环语句前定义一个标号，然后在内层循环体的代码中使用带有标号的`break`语句，即可跳出外层循环
 
 ```java
-public static void method1(){
+public static void main(String[] args) {
+	public static void method1(){
 		ok:for(int i=0;i<10;i++){
 			for(int j=0;j<10;j++){
 				System.out.println("i="+i+",j="+j);
 				if(j==5){
-					break ok;//跳到循环外的ok出，即终止整个循环
+					break ok;//跳到循环外的ok处，即终止整个循环
 				}
-			}
+            }
 		}
 	}
+}
 ```
 
