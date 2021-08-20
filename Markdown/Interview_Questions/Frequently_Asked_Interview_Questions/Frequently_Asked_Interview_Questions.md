@@ -65,3 +65,30 @@
 
 ![](../../../Images/Interview_Questions_Images/Frequently_Asked_Interview_Questions_Images/2021-08-20_190601.png)
 
+- `String`可以空赋值，`StringBuffer`和`StringBuilder`不行，报错；
+- 操作少量的数据用`String`；
+- 多线程操作字符串缓冲区下操作大量数据`StringBuffer`；
+- 单线程操作字符串缓冲区下操作大量数据`StringBuilder`。
+  - 底层实现，`StringBuffer`比`StringBuilder`多了`Synchronized`修饰符。
+
+<br>
+
+<br>
+
+### 六、在Java中如何跳出当前的多重嵌套循环
+
+可以在外层循环语句前定义一个标号，然后在内层循环体的代码中使用带有标号的`break`语句，即可跳出外层循环
+
+```java
+public static void method1(){
+		ok:for(int i=0;i<10;i++){
+			for(int j=0;j<10;j++){
+				System.out.println("i="+i+",j="+j);
+				if(j==5){
+					break ok;//跳到循环外的ok出，即终止整个循环
+				}
+			}
+		}
+	}
+```
+
