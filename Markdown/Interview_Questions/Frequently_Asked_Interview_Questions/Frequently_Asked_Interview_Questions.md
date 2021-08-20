@@ -81,16 +81,17 @@
 
 ```java
 public static void main(String[] args) {
-	public static void method1(){
-		ok:for(int i=0;i<10;i++){
-			for(int j=0;j<10;j++){
-				System.out.println("i="+i+",j="+j);
-				if(j==5){
-					break ok;//跳到循环外的ok处，即终止整个循环
-				}
+        public static void method1 () {
+            ok:
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+                    System.out.println("i=" + i + ",j=" + j);
+                    if (j == 5) {
+                        break ok;//跳到循环外的ok处，即终止整个循环
+                    }
+                }
             }
-		}
-	}
-}
+        }
+    }
 ```
 
