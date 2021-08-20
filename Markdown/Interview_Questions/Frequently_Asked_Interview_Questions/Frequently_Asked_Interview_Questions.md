@@ -95,3 +95,10 @@ public static void main(String[] args) {
     }
 ```
 
+<br>
+
+<br>
+
+### 七、`int`和`Integer`有什么区别
+
+- Java提供两种不同类型：
