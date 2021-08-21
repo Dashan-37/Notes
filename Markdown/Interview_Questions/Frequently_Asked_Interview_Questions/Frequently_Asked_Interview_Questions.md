@@ -106,3 +106,23 @@ public static void main(String[] args) {
   - 封装类类型：`Boolean`，`Character`，`Byte`，`Short`，`Integer`，`Long`，`Float`，`Double`。
   - 引用数据类型：`数组`、`类`、`接口`。
 
+- `Int`是`java`的原始数据类型，`Integer`是`java`为`int`提供的封装  `int的包装类就是Integer`。
+
+```java
+// 装箱
+Integer a = 10;
+// 拆箱
+int b = a;
+```
+
+<br>
+
+<br>
+
+### 八、数组`Array`和列表`ArrayList`的区别
+
+- 存储内容比较：`Array`可以包含基本类型和对象类型，`ArrayList`却只能包含对象类型，`Array`数组在存放的时候必须是同种类型的元素，`ArrayList`就不一定了；
+- 空间大小比较：`Array`数组空间大小是固定的，需要提前确定合适的空间大小，`ArrayList`的空间是动态增长的，而且每次添加新的元素的时候都会检查内部数组的空间是否足够；
+- 方法上的比较：`ArrayList`方法比`Array`更多样化，支持迭代器操作
+  - ArrayList提供的方法和特性：`addAll()`，`removeAll()`，`iterator()`...
+
