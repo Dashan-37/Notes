@@ -102,6 +102,7 @@ public static void main(String[] args) {
 ### 七、`int`和`Integer`有什么区别
 
 - Java提供两种不同类型：
-  - 基本数据类型：`boolean`、`byte`、`int`、`char`、`long`、`short`、`double`、`float`；
+  - 基本数据类型：`boolean`，`char`，`byte`，`short`，`int`，`long`，`float`，`double`；
+  - 封装类类型：`Boolean`，`Character`，`Byte`，`Short`，`Integer`，`Long`，`Float`，`Double`。
   - 引用数据类型：`数组`、`类`、`接口`。
 
