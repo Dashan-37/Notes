@@ -63,7 +63,7 @@
 
 ### 五、`Strin`、`StringBuffer`与`StringBuilder`的区别
 
-![](../../../Images/Interview_Questions_Images/Frequently_Asked_Interview_Questions_Images/2021-08-20_190601.png)
+![](https://github.com/Dashan-IZ/Notes/raw/master/Images/Interview_Questions_Images/Frequently_Asked_Interview_Questions_Images/2021-08-20_190601.png)
 
 - `String`可以空赋值，`StringBuffer`和`StringBuilder`不行，报错；
 - 操作少量的数据用`String`；
@@ -229,7 +229,7 @@ int b = a;
     6. 静态方法不能被重写为非静态的方法`会编译出错`。
 
 
-![](../../../Images/Interview_Questions_Images/Frequently_Asked_Interview_Questions_Images/2021-08-23_193127.png)
+![](https://github.com/Dashan-IZ/Notes/raw/master/Images/Interview_Questions_Images/Frequently_Asked_Interview_Questions_Images/2021-08-23_193127.png)
 
 - ##### 重载`Overload`：
 
