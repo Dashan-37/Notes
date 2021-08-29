@@ -322,7 +322,7 @@ int b = a;
 - ##### 线程安全的实现方法
 
   -  保证线程安全以是否需要同步手段分类，分为同步方案和无需同步方案
-  -  ![](../../../Images/Interview_Questions_Images/Frequently_Asked_Interview_Questions_Images/2021-08-25_170651.png)
+  -  ![](https://github.com/Dashan-IZ/Notes/raw/master/Images/Interview_Questions_Images/Frequently_Asked_Interview_Questions_Images/2021-08-25_170651.png)
   -  同步方案
      -  互斥同步
         -  互斥同步是最常见的一种并发正确性保障手段。同步是指在多线程并发访问共享数据时，保证共享数据在同一时刻只被一个线程使用（同一时刻，只有一个线程在操作共享数据）。而互斥是实现同步的一种手段，临界区、互斥量和信号量都是主要的互斥实现方式。因此，在这4个字里面，互斥是因，同步是果；互斥是方法，同步是目的。
