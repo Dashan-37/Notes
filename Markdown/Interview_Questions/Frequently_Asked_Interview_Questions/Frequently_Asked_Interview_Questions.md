@@ -398,7 +398,7 @@ int b = a;
 
 <br>
 
-### 十七、什么是反射机制
+### 十七、什么是[反射](https://github.com/Dashan-IZ/Notes/blob/master/Markdown/Code_Notes/%E5%8F%8D%E5%B0%84/%E5%8F%8D%E5%B0%84.md)机制
 
 - ##### 什么是反射机制？
 
@@ -452,47 +452,9 @@ true
 
 **结论**：同一个字节码文件`*.class`在一次程序运行过程中，只会被加载一次，无论通过哪一种方式获取的`Class`对象都是同一个。
 
-- ##### 获取`Class`对象的功能
+<br>
 
-  - 获取成员变量
+<br>
 
-  - ```java
-    Field[] getFields()          //获取所有public修饰的成员变量
-    Field getField(String name)  //获取指定名称的public修饰的成员变量
-    
-    Field[] getDeclaredFields()  //获取所有的成员变量，不考虑修饰符
-    Field getDeclaredField(String name)  //获取指定的成员变量，不考虑修饰符
-    ```
-
-  - 获取构造方法
-
-  - ```java
-    Constructor<?>[] getConstructors() //获取所有public修饰的构造函数
-    Constructor<T> getConstructor(类<?>... parameterTypes)  //获取指定的public修饰的构造函数
-    
-    Constructor<?>[] getDeclaredConstructors()  //获取所有的构造函数，不考虑修饰符
-    Constructor<T> getDeclaredConstructor(类<?>... parameterTypes)  //获取指定的构造函数，不考虑修饰符
-    ```
-
-  - 获取成员方法
-
-  - ```java
-    Method[] getMethods()           //获取所有public修饰的成员方法
-    Method getMethod(String name, 类<?>... parameterTypes) //获取指定名称的public修饰的成员方法
-    
-    Method[] getDeclaredMethods()  //获取所有的成员方法，不考虑修饰符
-    Method getDeclaredMethod(String name, 类<?>... parameterTypes) //获取指定名称的成员方法，不考虑修饰符
-    ```
-
-  - 获取全类名
-
-  - ```java
-    String getName()
-    ```
-
-- ##### `Field：`成员变量
-
-  - 设置值`void set(Object obj, Object value)`
-  - 获取值`get(Object obj)`
-  - 忽略访问权限修饰符的安全检查`setAccessible(true)`暴力反射
+### 十八、`JVM`类加载机制分为那五个部分
 
