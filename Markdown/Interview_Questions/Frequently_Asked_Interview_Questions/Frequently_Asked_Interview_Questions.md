@@ -410,7 +410,7 @@ int b = a;
   - 可以在程序运行过程中，操作这些对象；
   - 可以解耦，提高程序的可扩展性。
 
-- ##### 获取Class对象的三种方式
+- ##### 获取`Class`对象的三种方式
 
   - 【`Source`源代码阶段】 `Class.forName(“全类名”);`将字节码文件加载进内存，返回`Class`对象；多用于配置文件，将类名定义在配置文件中，通过读取配置文件加载类；
   - 【`Class`类对象阶段】 `类名.class;`通过类名的属性`Class`获取；多用于参数的传递；
@@ -449,4 +449,44 @@ class3 = class zzuli.edu.cn.Person
 true
 true
 ```
+
+**结论**：同一个字节码文件`*.class`在一次程序运行过程中，只会被加载一次，无论通过哪一种方式获取的`Class`对象都是同一个。
+
+- ##### 获取`Class`对象的功能`
+
+  - 获取成员变量
+
+  - ```java
+    Field[] getFields()          //获取所有public修饰的成员变量
+    Field getField(String name)  //获取指定名称的public修饰的成员变量
+    
+    Field[] getDeclaredFields()  //获取所有的成员变量，不考虑修饰符
+    Field getDeclaredField(String name)  //获取指定的成员变量，不考虑修饰符
+    ```
+
+  - 获取构造方法
+
+  - ```java
+    Constructor<?>[] getConstructors() //获取所有public修饰的构造函数
+    Constructor<T> getConstructor(类<?>... parameterTypes)  //获取指定的public修饰的构造函数
+    
+    Constructor<?>[] getDeclaredConstructors()  //获取所有的构造函数，不考虑修饰符
+    Constructor<T> getDeclaredConstructor(类<?>... parameterTypes)  //获取指定的构造函数，不考虑修饰符
+    ```
+
+  - 获取成员方法
+
+  - ```java
+    Method[] getMethods()           //获取所有public修饰的成员方法
+    Method getMethod(String name, 类<?>... parameterTypes) //获取指定名称的public修饰的成员方法
+    
+    Method[] getDeclaredMethods()  //获取所有的成员方法，不考虑修饰符
+    Method getDeclaredMethod(String name, 类<?>... parameterTypes) //获取指定名称的成员方法，不考虑修饰符
+    ```
+
+  - 获取全类名
+
+  - ```java
+    String getName()
+    ```
 
