@@ -400,3 +400,53 @@ int b = a;
 
 ### 十七、什么是反射机制
 
+- ##### 什么是反射机制？
+
+  - 在程序运行状态中，对于任意一个类或对象，都能够获取到这个类的所有属性和方法（包括私有属性和方法），这种动态获取信息以及动态调用对象方法的功能就称为反射机制；
+  - 简单来讲，通过反射，类对我们是完全透明的，想要获取任何东西都可以。
+
+- ##### 反射的优点
+
+  - 可以在程序运行过程中，操作这些对象；
+  - 可以解耦，提高程序的可扩展性。
+
+- ##### 获取Class对象的三种方式
+
+  - 【`Source`源代码阶段】 `Class.forName(“全类名”);`将字节码文件加载进内存，返回`Class`对象；多用于配置文件，将类名定义在配置文件中，通过读取配置文件加载类；
+  - 【`Class`类对象阶段】 `类名.class;`通过类名的属性`Class`获取；多用于参数的传递；
+  - 【`Runtime`运行时阶段】`对象.getClass();`此方法是定义在`Objec`类中的方法，因此所有的类都会继承此方法，多用于对象获取字节码的方式。
+
+```java
+public class getClass {
+        public static void main(String[] args) throws Exception {
+
+            //方式一：Class.forName("全类名");
+            Class class1 = Class.forName("zzuli.edu.cn.Person");   //Person自定义实体类
+            System.out.println("class1 = " + class1);
+
+            //方式二：类名.class
+            Class class2 = Person.class;
+            System.out.println("class2 = " + class2);
+
+            //方式三：对象.getClass();
+            Person person = new Person();
+            Class class3 = person.getClass();
+            System.out.println("class3 = " + class3);
+
+            //比较三个对象
+            System.out.println(class1 == class2);    //true
+            System.out.println(class1 == class3);    //true
+        }
+    }
+```
+
+`运行结果：`
+
+```java
+class1 = class zzuli.edu.cn.Person
+class2 = class zzuli.edu.cn.Person
+class3 = class zzuli.edu.cn.Person
+true
+true
+```
+
